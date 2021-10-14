@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 
 <html>
-
     <head>
         <title>ChromeDino</title>
-    	<link rel="icon" href="D:\Scuola\I3\Mod 306-Progetti\ChromeDinoHotseat\favico\i1agromanfav.ico" type="image/x-icon">
+    	<!-- <link rel="icon" href="D:\Scuola\I3\Mod 306-Progeti\ChromeDinoHotseat\favico\i1agromanfav.ico" type="image/x-icon"> -->
     	<meta cahrset="UTF-8">
     	<meta name="description" content="file base">
     	<meta name="keywords" contenent="HTML,CSS,XML,JavaScript">
@@ -13,8 +12,7 @@
     	<!--data creazione 07.10.21-->	
     	
         <style>
-           
-         
+ 
         </style>
         
     </head>
@@ -22,4 +20,60 @@
     <body>
         
     </body>
+
+    <script src="js/phaser.js"></script>
+
+    <script type="text/javascript">
+        
+        var config = {
+            type: Phaser.AUTO,
+            width: 700,
+            height: 500,
+
+            scene: {
+                preload: preload,
+                create: create,
+                update: update,
+                render: render
+                    
+            },
+
+            scale: {
+                autoCenter: Phaser.Scale.CENTER_BOTH,
+            },
+
+            backgroundColor: 0xDDDDDD
+
+        };
+
+        var game = new Phaser.Game(config);
+        var line;
+
+        //prima di usare gli assets devi fare il preload
+        function preload ()
+        {
+            this.load.image('blueDino', '/img/DinoBlue.png');
+        }
+
+        function create ()
+        {
+            line = new Phaser.Geom.Line(100, 300, 700, 300);
+          
+
+        }
+
+        function update ()
+        {
+
+        }
+
+        function render()
+        {
+
+            game.debug.geom(line);            
+            
+        }
+       
+    </script>
+          
 </html>
