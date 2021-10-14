@@ -22,6 +22,7 @@
     </body>
 
     <script src="js/phaser.js"></script>
+    <script src="js/phaser-arcade-physics.js"></script>
 
     <script type="text/javascript">
         
@@ -34,7 +35,7 @@
                 preload: preload,
                 create: create,
                 update: update,
-                render: render
+              
                     
             },
 
@@ -47,18 +48,24 @@
         };
 
         var game = new Phaser.Game(config);
-        var line;
+        var dino1;
+
 
         //prima di usare gli assets devi fare il preload
         function preload ()
         {
-            this.load.image('blueDino', '/img/DinoBlue.png');
+            this.load.spritesheet('blueDino', '/img/DinoBlue.png', { frameWidth: 32, frameHeight: 48 });
         }
 
         function create ()
         {
-            line = new Phaser.Geom.Line(100, 300, 700, 300);
-          
+            //dino1 = this.physics.add.sprite(100, 450, 'blueDino');
+            player.setBounce(0.2);
+            player.setCollideWorldBounds(true);
+            /*line = new Phaser.Geom.Line(100, 300, 700, 300);
+            var graphics = this.add.graphics({ lineStyle: { width: 4, color: 0xaa00aa } });
+
+            graphics.strokeLineShape(line);*/
 
         }
 
@@ -67,12 +74,7 @@
 
         }
 
-        function render()
-        {
-
-            game.debug.geom(line);            
-            
-        }
+        
        
     </script>
           
