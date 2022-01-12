@@ -13,12 +13,14 @@
     	<!--data creazione 07.10.21-->	
     	
         <style>
- 
+            body{
+                background-color: black
+            }
         </style>
         
     </head>
 
-    <body style="padding-top: 50px">
+    <body style="padding-top: 50px" >
         <div id='gameDiv'></div>
     </body>
 
@@ -71,7 +73,7 @@
                     default: 'arcade',
                     arcade: {
                         gravity: { y: 3000 },
-                        debug: true
+                        debug: false
                     }
                 },
 
@@ -83,6 +85,8 @@
 
                 //backgroundColor: 0xDDDDDD
                 backgroundColor: 0xFFFFFF,
+                
+               
             };
 
         //creazione interfaccia gioco
